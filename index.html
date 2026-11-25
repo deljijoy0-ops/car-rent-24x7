@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24-Hour Vehicle Rental Hub — Cars, Bikes &amp; Scooters</title>
+    <!-- Linking External CSS -->
+    <link rel="stylesheet" href="vehicle-style.css">
+</head>
+<body>
+
+    <!-- ================= HEADER SECTION ================= -->
+    <header>
+        <h1>City 24x7 Vehicle Rental Hub</h1>
+        <p>Rent Top Brand Cars, Bikes &amp; Scooters at Affordable 24-Hour Rates</p>
+    </header>
+
+    <!-- ================= STANDARD 24-HOUR BASE RATES ================= -->
+    <section class="base-rates-banner">
+        <div class="rate-pill">
+            <h3>🚗 Car Rental (24 Hrs)</h3>
+            <p class="price">Starts at ₹2,000</p>
+            <small>Maruti Suzuki, Hyundai, Tata, Mahindra, Toyota</small>
+        </div>
+        <div class="rate-pill">
+            <h3>🏍️ Bike Rental (24 Hrs)</h3>
+            <p class="price">Starts at ₹1,000</p>
+            <small>Bajaj, TVS, Yamaha, Royal Enfield</small>
+        </div>
+        <div class="rate-pill">
+            <h3>🛵 Scooter Rental (24 Hrs)</h3>
+            <p class="price">Starts at ₹750</p>
+            <small>Honda, TVS, Suzuki, Ola Electric</small>
+        </div>
+    </section>
+
+    <!-- ================= CATEGORY FILTER BUTTONS ================= -->
+    <div class="filter-bar">
+        <button class="filter-btn active" onclick="displayVehicles('All', this)">All Vehicles (13)</button>
+        <button class="filter-btn" onclick="displayVehicles('Car', this)">Cars (₹2000+)</button>
+        <button class="filter-btn" onclick="displayVehicles('Bike', this)">Bikes (₹1000+)</button>
+        <button class="filter-btn" onclick="displayVehicles('Scooter', this)">Scooters (₹750+)</button>
+    </div>
+
+    <!-- ================= MAIN CONTAINER ================= -->
+    <main class="container">
+
+        <!-- JavaScript dynamically renders Vehicle Cards here -->
+        <div id="vehicleGrid" class="vehicle-grid"></div>
+
+        <!-- ================= BOOKING & RENT CALCULATOR ================= -->
+        <section id="bookingSection" class="booking-box">
+            <h2>24-Hour Rent Calculator &amp; Booking</h2>
+
+            <div class="form-group">
+                <label for="customerName">Your Full Name:</label>
+                <input type="text" id="customerName" placeholder="Enter your name">
+            </div>
+
+            <div class="form-group">
+                <label for="vehicleSelect">Select Vehicle &amp; Brand:</label>
+                <select id="vehicleSelect"></select>
+            </div>
+
+            <div class="form-group">
+                <label for="rentDays">Number of Days (1 Day = 24 Hours):</label>
+                <input type="number" id="rentDays" value="1" min="1" max="30">
+            </div>
+
+            <button class="calc-btn" onclick="calculateRent()">Calculate Total Rent</button>
+
+            <!-- JavaScript displays the total rent calculation here -->
+            <div id="bookingResult"></div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER SECTION ================= -->
+    <footer>
+        <p><strong>City 24x7 Vehicle Rental Hub</strong> — Car (₹2000/24hrs) | Bike (₹1000/24hrs) | Scooter (₹750/24hrs)</p>
+        <p>Built with HTML5, CSS3 &amp; JavaScript</p>
+    </footer>
+
+    <!-- Linking External JavaScript -->
+    <script src="vehicle-script.js"></script>
+</body>
+</html>
